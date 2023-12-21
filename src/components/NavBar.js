@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 
-export default function NavBar() {
+export const NavBar = () => {
   //STATES _______________________________________________________________________________________________________
   const [activeLink, setActiveLink] = useState("home");
-  const [scrolled, setScrolled] = useState[false];
+  const [scrolled, setScrolled] = useState(false);
 
   //EVENT LISTENER _______________________________________________________________________________________________
   //SCROLL FUNCTION ____________________
@@ -39,7 +37,7 @@ export default function NavBar() {
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
@@ -77,13 +75,13 @@ export default function NavBar() {
           <span className="navbar-text">
             <div className="social-icon">
               <a href="#">
-                <img src={navIcon1} alt="" />
+                <img src={navIcon1} alt="socials icon" />
               </a>
               <a href="#">
-                <img src={navIcon2} alt="" />
+                <img src={navIcon2} alt="socials icon" />
               </a>
               <a href="#">
-                <img src={navIcon3} alt="" />
+                <img src={navIcon3} alt="socials icon" />
               </a>
             </div>
             <button className="vvd" onClick={() => console.log("connect")}>
@@ -94,4 +92,4 @@ export default function NavBar() {
       </Container>
     </Navbar>
   );
-}
+};
