@@ -69,7 +69,11 @@ export const Skills = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-left" src={colorSharp} />
+      <img
+        className="background-image-left"
+        src={colorSharp}
+        alt="pink purple gradient"
+      />
     </section>
   );
 };

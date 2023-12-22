@@ -81,7 +81,11 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} />
+      <img
+        className="background-image-right"
+        src={colorSharp2}
+        alt="pink purple gradient blur"
+      />
     </section>
   );
 };
