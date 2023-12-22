@@ -65,7 +65,9 @@ export const Banner = () => {
             </h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet,
+              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et
             </p>
             <button onClick={() => console.log("connect")}>
               Let's connect <ArrowRightCircle size={25} />
