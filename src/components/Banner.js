@@ -10,7 +10,7 @@ export const Banner = () => {
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const period = 2000;
+  const period = 1000;
 
   //EVENT LISTENER _______________________________________________________________________________________________
   //HEADING TEXT ROTATION TIMER(ADDING & DELETING) ____________________
