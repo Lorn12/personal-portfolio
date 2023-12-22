@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
+import Nav from "react-bootstrap/Nav";
 
 export const Projects = () => {
   const projects = [
@@ -57,6 +58,17 @@ export const Projects = () => {
                   <Nav.Link eventKey="third">Tab Three</Nav.Link>
                 </Nav.Item>
               </Nav>
+              <Tab.Content>
+                <Tab.Pane eventKey="first">
+                  <Row>
+                    {projects.map((project, index) => {
+                      return <p>{project.title}</p>;
+                    })}
+                  </Row>
+                </Tab.Pane>
+                <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
+                <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
+              </Tab.Content>
             </Tab.Container>
           </Col>
         </Row>
