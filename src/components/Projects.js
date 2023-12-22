@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
+import React from "react";
 import Nav from "react-bootstrap/Nav";
+import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
+import { ProjectCard } from "./ProjectCard.js";
 
 export const Projects = () => {
   const projects = [
@@ -62,7 +63,7 @@ export const Projects = () => {
                 <Tab.Pane eventKey="first">
                   <Row>
                     {projects.map((project, index) => {
-                      return <p>{project.title}</p>;
+                      return <ProjectCard />;
                     })}
                   </Row>
                 </Tab.Pane>
