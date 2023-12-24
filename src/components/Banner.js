@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
@@ -9,24 +9,13 @@ export const Banner = () => {
   //STATES _______________________________________________________________________________________________________
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 1000;
 
-  //EVENT LISTENER _______________________________________________________________________________________________
-  //HEADING TEXT ROTATION TIMER(ADDING & DELETING) ____________________
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
-
-  const tick = () => {
+  // Define 'toRotate' array inside the 'useCallback' hook
+  const tick = useCallback(() => {
+    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updatedText = isDeleting
@@ -48,8 +37,19 @@ export const Banner = () => {
       setLoopNum(loopNum + 1);
       setDelta(500);
     }
-  };
+  }, [loopNum, isDeleting, text, period]);
 
+  //EVENT LISTENER _______________________________________________________________________________________________
+  //HEADING TEXT ROTATION TIMER(ADDING & DELETING) ____________________
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => {
+      clearInterval(ticker);
+    };
+  }, [text, delta, tick]);
   //RETURN THE HEADING/BANNER _____________________________________________________________________________________________
 
   return (
