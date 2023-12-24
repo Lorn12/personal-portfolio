@@ -42,15 +42,15 @@ export const Projects = () => {
     },
   ];
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
-          <Col>
+          <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div
                   className={
-                    isVisible ? "animate__animated animate__slideInUp" : ""
+                    isVisible ? "animate__animated animate__fadeInUp" : ""
                   }
                 >
                   <h2>Projects</h2>
@@ -63,6 +63,7 @@ export const Projects = () => {
                 </div>
               )}
             </TrackVisibility>
+
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
               <Nav
                 variant="pills"
@@ -79,16 +80,27 @@ export const Projects = () => {
                   <Nav.Link eventKey="third">Tab Three</Nav.Link>
                 </Nav.Item>
               </Nav>
+
               <Tab.Content>
-                <Tab.Pane eventKey="first">
-                  <Row>
-                    {projects.map((project, index) => {
-                      return <ProjectCard key={index} {...project} />;
-                    })}
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
-                <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
+                <TrackVisibility>
+                  {({ isVisible }) => (
+                    <div
+                      className={
+                        isVisible ? "animate__animated animate__fadeInUp" : ""
+                      }
+                    >
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {projects.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
+                      <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
+                    </div>
+                  )}
+                </TrackVisibility>
               </Tab.Content>
             </Tab.Container>
           </Col>
