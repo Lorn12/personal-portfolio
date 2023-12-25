@@ -4,7 +4,8 @@ This project was bootstrapped with <a href="https://github.com/facebook/create-r
 
 # APP-DEMO
 
-<video src="personal-portfolio-demo.mp4" controls title="Title"></video>
+https://github.com/Lorn12/personal-portfolio/assets/43707274/c1b3be3b-c059-406c-8f47-bcb3240a1b03
+
 
 # KEYPOINTS & BUILT USING
 
