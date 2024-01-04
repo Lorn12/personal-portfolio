@@ -2,7 +2,7 @@
 
 This project was bootstrapped with <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>, and a Webdecoded tutorial.
 
-# APP-DEMO
+# APP-DEMO 🚀
 
 https://github.com/Lorn12/personal-portfolio/assets/43707274/c1b3be3b-c059-406c-8f47-bcb3240a1b03
 
